@@ -1,0 +1,109 @@
+@font-face {
+  font-family: 'Inter';
+  src: url('Inter-Bold.ttf') format('truetype');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border:0;
+  box-sizing: border-box;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  color:yellow;
+  outline:1px solid red;
+  }
+
+.wrapper {
+  background: yellow;
+}
+
+.container {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  max-width: 90%;
+  min-height: 100vh;
+  margin: 0 auto;
+  gap: 2rem;
+  padding-top: 1rem;
+  overflow-y: hidden;
+  background: black;
+}
+/*-------images---------*/
+.images {
+  display: flex;
+  max-width: 89%;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  transition: 0.5s;
+}
+
+.images-item {
+  min-width: 100%;
+}
+
+/*-------images---------*/
+/*--images-bottom-------*/
+.images-bottom {
+  display: flex;
+  flex-direction: row-reverse;
+  max-width: 89%;
+}
+
+.controls {
+  display: flex;
+}
+
+.controls-labels {
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.controls-inputs {
+  display: none;
+}
+
+.controls:has(#i-1:checked) ~ .images,
+.controls:has(#i-1:checked) ~ .captions { transform: translateX(0);}
+.controls:has(#i-2:checked) ~ .images,
+.controls:has(#i-2:checked) ~ .captions { transform: translateX(-100%);}
+
+.controls-circle {
+  width: 1rem;
+  height: 1rem;
+  background: blue;
+  border: 0.1rem solid blue;
+  border-radius: 50%;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.controls-labels:hover > .controls-circle {
+  background: white;
+  border: 0.2rem solid white;
+}
+.controls-labels:active > .controls-circle {
+  background: red;
+  border: 0.2rem solid red;
+}
+.controls-labels:has(.controls-inputs:checked) > .controls-circle {
+  background: transparent;
+}
+
+.captions {
+  flex:1; 
+  display: flex;
+  overflow: hidden;
+}
+
+.captions-title {
+  display: flex;
+  transition: 0.5s;
+  min-width:100%;
+}
+
