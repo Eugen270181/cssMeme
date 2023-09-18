@@ -25,7 +25,7 @@
   flex-direction: column-reverse;
   align-items: center;
   max-width: 90%;
-  min-height: 100vh;
+  min-height: 100vh; 
   margin: 0 auto;
   gap: 2rem;
   padding-top: 1rem;
@@ -33,15 +33,18 @@
   background: black;
 }
 /*-------images---------*/
-.images {
-  display: flex;
-  max-width: 89%;
+.images-overflow {
   overflow: hidden;
   border-radius: 0.5rem;
+}
+
+.images {
+  display: flex;
   transition: 0.5s;
 }
 
 .images-item {
+  border-radius: 0.5rem;
   min-width: 100%;
 }
 
@@ -50,7 +53,8 @@
 .images-bottom {
   display: flex;
   flex-direction: row-reverse;
-  max-width: 89%;
+  align-self: stretch;
+  /* max-width: 89%; */
 }
 
 .controls {
@@ -68,10 +72,11 @@
   display: none;
 }
 
-.images-bottom:has(#i-1:checked) ~ .images,
-.controls:has(#i-1:checked) ~ .captions { transform: translateX(0);}
-.images-bottom:has(#i-2:checked) ~ .images,
-.controls:has(#i-2:checked) ~ .captions { transform: translateX(-100%);}
+
+.images-bottom:has(#i-1:checked) ~ .images-overflow .images,
+.images-bottom .controls:has(#i-1:checked) ~ .captions-overflow .captions { transform: translateX(0);}
+.images-bottom:has(#i-2:checked) ~ .images-overflow .images,
+.images-bottom .controls:has(#i-2:checked) ~ .captions-overflow .captions { transform: translateX(-100%);}
 
 .controls-circle {
   width: 1rem;
@@ -95,10 +100,13 @@
   background: transparent;
 }
 
-.captions {
+.captions-overflow {
   flex:1; 
-  display: flex;
   overflow: hidden;
+}
+
+.captions {
+  display: flex;
 }
 
 .captions-title {
@@ -107,3 +115,8 @@
   min-width:100%;
 }
 
+@media (max-width: 1300px){
+  .images-item {
+    width: 100%;
+  }
+}
