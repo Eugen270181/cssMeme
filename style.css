@@ -68,9 +68,9 @@
   display: none;
 }
 
-.controls:has(#i-1:checked) ~ .images,
+.images-bottom:has(#i-1:checked) ~ .images,
 .controls:has(#i-1:checked) ~ .captions { transform: translateX(0);}
-.controls:has(#i-2:checked) ~ .images,
+.images-bottom:has(#i-2:checked) ~ .images,
 .controls:has(#i-2:checked) ~ .captions { transform: translateX(-100%);}
 
 .controls-circle {
